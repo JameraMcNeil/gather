@@ -33,7 +33,7 @@ const corsOptions = {
 	}
 }
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // controller
 const eventsController = require('./controllers/event_controller.js');
