@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require('express-session');
 const cors = require('cors');
 
 // import and configure dotenv
@@ -12,6 +13,7 @@ const dbname = 'events';
 
 // middleware
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 // error / disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongo not running?'));
