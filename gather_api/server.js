@@ -1,15 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const methodOverride = require('express-session');
+const methodOverride = require('method-override');
 const cors = require('cors');
 
 // import and configure dotenv
 require('dotenv').config();
 
 const app = express();
-const port = 3003;
+const PORT = process.env.PORT;
 
-const dbname = 'events';
+const DBNAME = process.env.DBNAME;
 
 // middleware
 app.use(express.json());
@@ -21,7 +21,7 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
 
 // connect db
-mongoose.connect(`mongodb://localhost:27017/${dbname}`);
+mongoose.connect(`mongodb://localhost:27017/${DBNAME}`);
 mongoose.connection.once('open', () => {
 	console.log('connected to mongoose! ~~~')
 });
@@ -45,6 +45,6 @@ const eventsController = require('./controllers/event_controller.js');
 app.use('/events', eventsController);
 
 // listener
-app.listen(port, () => {
-	console.log('listening on port ' + port)
+app.listen(PORT, () => {
+	console.log('listening on port ' + PORT)
 })
