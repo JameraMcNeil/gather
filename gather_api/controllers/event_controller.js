@@ -4,6 +4,9 @@ const events = express.Router();
 
 // models
 const Event = require('../models/event_model.js');
+const User = require('../models/users.js')
+
+// middleware
 
 /*~~~~~ routes ~~~~~*/
 
