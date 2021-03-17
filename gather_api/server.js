@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 const cors = require('cors');
 
 // import and configure dotenv
