@@ -52,6 +52,8 @@ const eventsController = require('./controllers/event_controller.js');
 app.use('/events', eventsController);
 const userController = require('./controllers/user_controller.js')
 app.use('/users', userController)
+const cityController = require('./controllers/city_controller.js');
+app.use('/cities', cityController);
 
 //sessions routes//
 
