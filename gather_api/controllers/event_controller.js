@@ -4,6 +4,7 @@ const events = express.Router();
 
 // models
 const Event = require('../models/event_model.js');
+const City = require('../models/cities.js');
 
 /*~~~~~ routes ~~~~~*/
 
