@@ -50,6 +50,36 @@ app.use(cors());
 const eventsController = require('./controllers/event_controller.js');
 app.use('/events', eventsController);
 
+//sessions routes//
+
+app.get('/create-session', (req, res) => {
+	console.log(req.session);
+	req.session.anyProperty = 'any value';
+	console.log(req.session);
+});
+
+app.get('/retrieve-session', (req,res) => {
+	if(req.session.anyProperty = 'some value') {
+		console.log('session properties match')
+	} else {
+		console.log('session properties do not match');
+	}
+	res.redirect('/events')
+});
+
+app.get('/update-session', (req, res) => {
+	req.session.anyProperty = 'changing anyProperty to this value'
+	res.redirect('/')
+});
+
+app.get('/destroy-session', (req, res) => {
+	if(err) {
+	console.log('ran into problems destroying session')
+	} else {
+		console.log('sucessfully deleted session')
+	}
+})
+
 // listener
 app.listen(PORT, () => {
 	console.log('listening on port ' + PORT)
