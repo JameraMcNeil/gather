@@ -50,6 +50,8 @@ app.use(cors());
 // controller
 const eventsController = require('./controllers/event_controller.js');
 app.use('/events', eventsController);
+const userController = require('./controllers/user_controller.js')
+app.use('/users', userController)
 
 //sessions routes//
 
@@ -79,7 +81,14 @@ app.get('/destroy-session', (req, res) => {
 	} else {
 		console.log('sucessfully deleted session')
 	}
-})
+});
+
+// stored in the db
+const hashedPassword = bcrypt.hashSync('password1234', bcrypt.genSaltSync(10));
+//generated from a password form
+const hashedPasswordGuess = bcrypt.hashSync('password1234', bcrypt.genSaltSync(10));
+//how to make sure a user can login
+bcrypt.compareSync(hashedPasswordGuess, hashedPassword) //returns true or false
 
 // listener
 app.listen(PORT, () => {
