@@ -1,4 +1,4 @@
-const mongsoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const citySchema = mongoose.Schema({
     city: String,

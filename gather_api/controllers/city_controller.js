@@ -7,7 +7,7 @@ const Event = require('../models/event_model.js');
 
 // seed
 
-cities.get('seed', (req, res) => {
+cities.get('/seed', (req, res) => {
     City.create([
         {
         City: 'New York',
@@ -75,7 +75,7 @@ cities.get('seed', (req, res) => {
         Activity: 'Enjoy a scenic hike on the Lands End Trail on your way to the historic Sutro Baths.'
     },
 ], (err, data) => {
-    res.redirect('/events')
+    res.redirect('/cities')
 });
 });
 
