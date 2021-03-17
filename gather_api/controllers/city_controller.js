@@ -1,7 +1,9 @@
 const express = require('express')
 const cities = express.Router()
 
-const City = require('../models/cities.js')
+// models
+const City = require('../models/cities.js');
+const Event = require('../models/event_model.js');
 
 // seed
 
