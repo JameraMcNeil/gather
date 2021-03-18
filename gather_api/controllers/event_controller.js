@@ -7,6 +7,9 @@ const Event = require('../models/event_model.js');
 
 /*~~~~~ routes ~~~~~*/
 
+// FYI: must use a cURL request to seed when using react router
+// curl 'http://localhost:3003/events/seed' 
+
 // seed
 events.get('/seed', (req, res) => {
 	Event.create([{
@@ -44,6 +47,16 @@ events.get('/', (req, res) => {
 		res.status(200).json(foundEvents);
 	});
 });
+
+// show
+events.get('/:id', (req, res) => {
+	Event.findById(req.params.id, (error, foundEvent) => {
+		if (error) {
+			res.status(400).json({ error: error.message });
+		}
+		res.status(200).json(foundEvent);
+	})
+})
 
 // create
 events.post('/', async (req, res) => {

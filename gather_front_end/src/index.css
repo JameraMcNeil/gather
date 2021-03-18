@@ -1,8 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --main: 'Raleway', sans-serif;
+  --blush: #ffaaa5;
+  --mint: #a8e6cf;
+  --not-black: #212121;
+  --dk-grey: #757575;
+  --lt-grey: #BDBDBD;
+  --rose-gold: #ffd3b6;
+  --gold: #ffde7d;
+  --turquoise: #00b8a9;
+  --red-ish: #ea5455;
+}
+
 body {
+  background: var(--mint);
+  color: var(--not-black);
+  font-family: var(--main) !important;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +25,181 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  box-shadow: 0px 5px 22px 0px var(--dk-grey);
+}
+
+.for-backgrounds {
+  background-color: var(--mint) !important;
+}
+
+.fa-cotton-bureau {
+  color: var(--red-ish);
+  font-size: 2.5em;
+}
+
+.nav-link {
+  color: var(--not-black);
+  font-size: 1em;
+}
+
+.nav-link:hover {
+  color: var(--not-black);
+  font-weight: 700;
+}
+
+.navbar-text {
+  color: var(--turquoise) !important;
+  font-size: 2em;
+}
+
+.large {
+  border: 0;
+  background-image: linear-gradient(to right, var(--mint), var(--gold), var(--rose-gold), var(--blush), var(--rose-gold), var(--gold), var(--mint));
+  height: 3px;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+.page-wrapper {
+  background: var(--mint);
+  padding: 1em;
+}
+
+.page-content {
+  animation: fade-in 1s ease;
+  background: var(--mint);
+}
+
+.page-content:hover .each-item {
+  filter: blur(1px);
+  opacity: .5;
+  transform: scale(.98);
+}
+
+.page-content:hover .each-item:hover {
+  animation: bounce 1s;
+  box-shadow: 0px 14px 80px #FFFFFF;
+  filter: blur(0px);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.each-item {
+  background: var(--gold);
+  box-shadow: 0px 14px 80px #FFFFFF;
+  color: var(--not-black);
+  height: 15em;
+  margin: 2em;
+  padding: 1em;
+  width: 15em;
+}
+
+.each-title {
+  color: var(--red-ish);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.router-link:hover {
+  background-image: linear-gradient(to right, var(--mint), var(--turquoise), var(--red-ish), var(--turquoise), var(--mint));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.each-name {
+  color: var(--not-black);
+  font-size: 1em;
+}
+
+.rounded-pill {
+  background: var(--turquoise);
+  bottom: 0;
+  color: white;
+  font-weight: 700;
+  width: 40%;
+}
+
+/* refer to line 9 in RESOURCES.md for citation */
+.hero {
+  background: url(./assets/hero.jpeg) no-repeat center;
+  background-size: cover;
+  box-shadow: 0 0.6px 2.2px rgba(0, 0, 0, 0.02),
+    0 1.5px 5.3px rgba(0, 0, 0, 0.028),
+    0 2.9px 10px rgba(0, 0, 0, 0.035),
+    0 5.1px 17.9px rgba(0, 0, 0, 0.042),
+    0 9.6px 33.4px rgba(0, 0, 0, 0.05),
+    0 23px 80px rgba(0, 0, 0, 0.07);
+  height: 400px;
+}
+
+.hero-text {
+  color: white;
+  font-size: 5em;
+  font-weight: 700;
+}
+
+.real {
+  padding-top: 3em;
+}
+
+.reflection {
+  margin-top: -.8em;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(1%, transparent), to(rgba(0, 0, 0, 0.4)));
+}
+
+.fa-trash-alt {
+  bottom: 2em;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.fa-trash-alt:hover {
+  color: white;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-40px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
 }
