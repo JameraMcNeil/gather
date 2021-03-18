@@ -40,9 +40,7 @@ export default class Explore extends Component {
         return (
             <div>
                 <h3>Gather Here: </h3>
-                <h3>City: {this.state.City}</h3>
-                <h3>State: {this.state.State}</h3>
-                <h3>Activity: {this.state.Activity}</h3>
+                <h3>City: {this.state.city}</h3>
             </div>
         )
     }
