@@ -62,7 +62,7 @@ export default class EventCard extends Component {
 						{ this.props.events.map(event => {
 							return (
 								<div className="each-item d-flex flex-column rounded position-relative" key={ event._id } >
-									<Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
+									<Link to={ "./" + event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
 									<p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
 									<p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
                   {/* { this.findCategory(event => {
