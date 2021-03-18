@@ -75,8 +75,18 @@ cities.get('/seed', (req, res) => {
         Activity: 'Enjoy a scenic hike on the Lands End Trail on your way to the historic Sutro Baths.'
     },
 ], (err, data) => {
-    res.redirect('/events')
+    res.redirect('/cities')
 });
 });
+
+// index
+cities.get('/', (req, res) => {
+	City.find({}, (err, foundCities) => {
+		if(err) {
+			res.status(400).json({ error: err.message });
+		}
+		res.status(200).json(foundCities);
+	});
+})
 
 module.exports = cities
