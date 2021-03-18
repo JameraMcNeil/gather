@@ -108,7 +108,7 @@ export default class Event extends Component {
             handleChange={ (e) => this.handleChange(e) }
             handleSubmit={ (e) => this.handleSubmit(e) }
         />
-		<Explore />
+		<Explore cities = {this.state.cities}/>
       </div>
 		)
 	}
