@@ -77,15 +77,15 @@ class App extends Component {
 						<Home events={ this.state.events } />
 					</Route>
 
-					<Route path='/create'>
+					<Route exact path='/create'>
 						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
 					</Route>
 
-					<Route path='/my'>
+					<Route exact path='/my'>
 						{/* my events page component here */}
 					</Route>
 
-					<Route path='/:id' component={Event} />
+					<Route exact path='/:id' render={(props) => <Event cities ={this.state.cities}/>} />
 					</Switch>
       			</div>
 	  		</Router>
